@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "i2c.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -93,6 +94,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   MX_TIM4_Init();
+  MX_I2C1_Init();
+  MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
 	HAL_UART_Receive_IT(&huart2, USART2_RX_BUF, 1);
   /* USER CODE END 2 */

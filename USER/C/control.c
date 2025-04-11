@@ -48,7 +48,6 @@ float pitch, roll, yaw; // 欧拉角
 static void Back_Parking_Control(void);
 static void Side_Parking_Control(void);
 static void Back_Side_Parking_Control(void);
-static void Kinematic_Update(float vel1, float vel2, float angle);
 static void Timer_Count_Handler(void);
 
 /* 函数实现 ------------------------------------------------------------------*/
