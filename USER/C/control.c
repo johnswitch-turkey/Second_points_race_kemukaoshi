@@ -9,16 +9,18 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
+#include "stm32f4xx_hal.h"
 #include "control.h"
 #include "main.h"  // 包含HAL库主头文件
 #include "tim.h"   // 定时器相关
 #include "gpio.h"  // GPIO相关
-#include "usart.h" // 串口相关
 #include "encoder.h"
 #include "pid.h"
 #include "motor.h"
 #include "key.h"
 #include "math.h"
+#include "mpu6050.h"
+#include "uart.h"
 
 /* 全局变量 ------------------------------------------------------------------*/
 Param_InitTypedef Param;
@@ -65,7 +67,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
         // 获取姿态数据
         if(Flag.Is_Go_straight || Flag.Is_Turn_Car) {
-//            mpu_dmp_get_data(&pitch, &roll, &yaw);
+            mpu_dmp_get_data(&pitch, &roll, &yaw);
         }
         
         // 读取编码器脉冲
@@ -152,7 +154,7 @@ static void Back_Parking_Control(void)
         case 1: // 直行检测
             if(Flag.Is_Go_straight) {
                 Kinematic_Analysis(60, 60, yaw);
-//                openMv_Proc();
+                openMv_Proc();
                 if(Param.openMV_Data == 1) {
                     Flag.Is_Go_straight = 0;
                     Flag.Is_Stop_Car = 1;
@@ -552,7 +554,7 @@ static void Back_Side_Parking_Control(void)
                 Flag.Is_Turn_Car = 0;
                 Flag.Is_Go_straight = 1;
                 Param.openMV_Data = 0;
-//                Usart4_SendString("startcnt1");
+                Usart2_SendString("startcnt1");
                 Flag.Run_Step = 9;
             }
             break;
@@ -591,23 +593,25 @@ static void Back_Side_Parking_Control(void)
                 Kinematic_Analysis(0, -150, SERVO_INIT + 300);
                 Flag.Is_Turn_Car = 1;
             }
-            if(abs((int)yaw) >= 40) {
-                Flag.Is_Turn_Car = 0;
-                Flag.Is_Start_Astern = 2;
-                Flag.Run_Step = 12;
+            if(abs((int)yaw) == 40) {
+                Flag.Is_Turn_Car=0;//不开启转弯
+//								Flag.Start_Count=0;//不开启计数
+//								Flag.Is_Timer_Up=0;//定时时间到标志位清零
+								Flag.Is_Start_Astern=2;//开始倒车第二步
+								Flag.Run_Step=12;//跳转下一步
             }
             break;
             
         case 12: // 回正倒车1s
             if(Flag.Is_Start_Astern == 2 && !Flag.Start_Count) {
-                Kinematic_Analysis(-100, -100, SERVO_INIT);
-                Flag.Start_Count = 1;
-                Param.Timer_threshold_value = 100;
+                Kinematic_Analysis(-100,-100,SERVO_INIT);								
+							  Flag.Start_Count=1;//开始计时
+							  Param.Timer_threshold_value=100;//定时1s
             }
-            if(Flag.Is_Timer_Up) {
-                Flag.Start_Count = 0;
-                Flag.Is_Timer_Up = 0;
-                Flag.Is_Start_Astern = 3;
+            if(Flag.Is_Timer_Up) { //定时时间到
+                Flag.Start_Count=0;//不开启计数
+								Flag.Is_Timer_Up=0;//定时时间到标志位清零
+								Flag.Is_Start_Astern=3;//清零倒车步骤
                 Flag.Run_Step = 13;
             }
             break;
@@ -615,11 +619,13 @@ static void Back_Side_Parking_Control(void)
         case 13: // 左转60°倒车
             if(Flag.Is_Start_Astern == 3 && !Flag.Start_Count) {
                 Kinematic_Analysis(-200, -100, SERVO_INIT - 300);
-                Flag.Is_Turn_Car = 1;
+                Flag.Is_Turn_Car = 1;  //清零倒车步骤//开始转弯
             }
             if(abs((int)yaw) <= 5) {
-                Flag.Is_Turn_Car = 0;
-                Flag.Is_Start_Astern = 0;
+//                Flag.Is_Turn_Car = 0; //不开启转弯
+//							  Flag.Is_Timer_Up=0;//定时时间到标志位清零
+							  Flag.Start_Count=0; //不开启计数
+                Flag.Is_Start_Astern = 0; //清零倒车步骤
                 Flag.Run_Step = 14;
             }
             break;
@@ -627,79 +633,85 @@ static void Back_Side_Parking_Control(void)
         case 14: // 直行调整位置
             if(Flag.Is_Start_Astern == 0 && !Flag.Start_Count) {
                 Kinematic_Analysis(100, 100, SERVO_INIT);
-                Flag.Start_Count = 1;
-                Param.Timer_threshold_value = 100;
+                Flag.Start_Count = 1; //开始计时
+                Param.Timer_threshold_value = 100; //定时1s
             }
-            if(Flag.Is_Timer_Up) {
-                Flag.Start_Count = 0;
-                Flag.Is_Timer_Up = 0;
-                Flag.Is_Stop_Car = 1;
+            if(Flag.Is_Timer_Up) { //定时时间到
+                Flag.Start_Count = 0; //不开启计数
+                Flag.Is_Timer_Up = 0; //定时时间到标志位清零
+                Flag.Is_Stop_Car = 1; //不停车
                 Flag.Run_Step = 15;
             }
             break;
             
-        case 15: // 停车5秒
+        case 15: // 停车5秒 //停车，回正，蜂鸣器响，定时5s
             if(Flag.Is_Stop_Car && !Flag.Start_Count) {
                 Kinematic_Analysis(0, 0, 0.0);
-                Flag.Start_Count = 1;
-                Param.Timer_threshold_value = 500;
-                BEEP_ON;
+                Flag.Start_Count = 1; //开始计时
+                Param.Timer_threshold_value = 500; //定时5s
+                BEEP_ON; //蜂鸣器响
             }
-            if(Flag.Is_Timer_Up) {
-                BEEP_OFF;
-                Flag.Start_Count = 0;
-                Flag.Is_Timer_Up = 0;
-                Flag.Is_Stop_Car = 0;
-                Flag.Run_Step = 16;
+            if(Flag.Is_Timer_Up) { //定时时间到
+                BEEP_OFF; //关蜂鸣器
+                Flag.Start_Count = 0; //不开启计数
+                Flag.Is_Timer_Up = 0; //定时时间到标志位清零
+                Flag.Is_Stop_Car = 0; //不停车
+                Flag.Run_Step = 16; //跳转下一步
             }
             break;
-            
+						
+            /*出库*/
         case 16: // 后退0.6s
             if(!Flag.Is_Timer_Up && !Flag.Start_Count) {
                 Kinematic_Analysis(-100, -100, SERVO_INIT);
-                Flag.Start_Count = 1;
-                Param.Timer_threshold_value = 60;
+                Flag.Start_Count = 1; //开始计时
+                Param.Timer_threshold_value = 60; //定时0.6s
             }
             if(Flag.Is_Timer_Up) {
-                Flag.Start_Count = 0;
-                Flag.Is_Timer_Up = 0;
+                Flag.Start_Count = 0; //不开启计数
+                Flag.Is_Timer_Up = 0; //定时时间到标志位清零
+							  Flag.Is_Stop_Car=0; //不停车
                 Flag.Run_Step = 17;
             }
             break;
             
-        case 17: // 左转60°出库
+        case 17: // 左转60°，前进，差速转弯出库
             if(!Flag.Is_Stop_Car) {
                 Kinematic_Analysis(150, 0, SERVO_INIT - 300);
-                Flag.Is_Turn_Car = 1;
+                Flag.Is_Turn_Car = 1; // 开始转弯
             }
-            if(abs((int)yaw) >= 40) {
-                Flag.Is_Turn_Car = 0;
-                Flag.Run_Step = 18;
+            if(abs((int)yaw) >= 40) { // 角度为-40°结束
+							  Flag.Is_Turn_Car=0; // 不开启转弯
+//								Flag.Start_Count=0; // 不开启计数
+//                Flag.Is_Turn_Car = 0; // 定时时间到标志位清零
+                Flag.Run_Step = 18; // 跳转下一步
             }
             break;
             
-        case 18: // 回正直行0.8s
+        case 18: // 回正，直行，不差速转弯，定时0.8s
             if(!Flag.Is_Timer_Up && !Flag.Start_Count) {
                 Kinematic_Analysis(100, 100, 0.0);
-                Flag.Start_Count = 1;
-                Param.Timer_threshold_value = 80;
+                Flag.Start_Count = 1; // 开始计时
+                Param.Timer_threshold_value = 80; // 定时0.8s
             }
-            if(Flag.Is_Timer_Up) {
-                Flag.Start_Count = 0;
-                Flag.Is_Timer_Up = 0;
-                Flag.Run_Step = 19;
+            if(Flag.Is_Timer_Up) { // 定时时间到
+                Flag.Start_Count = 0; // 不开启计数
+                Flag.Is_Timer_Up = 0; // 定时时间到标志位清零
+                Flag.Run_Step = 19; // 跳转下一步
             }
             break;
             
         case 19: // 右转60°归位
             if(!Flag.Start_Count) {
-                Kinematic_Analysis(100, 150, SERVO_INIT + 300);
-                Flag.Is_Turn_Car = 1;
+                Kinematic_Analysis(100, 150, SERVO_INIT + 300.0);
+                Flag.Is_Turn_Car = 1; // 开始转弯
             }
             if(abs((int)yaw) <= 5) {
-                Flag.Is_Turn_Car = 0;
-                Flag.Is_Stop_Car = 1;
-                Flag.Run_Step = 20;
+                Flag.Is_Turn_Car = 0; // 不开启转弯
+//                Flag.Is_Stop_Car = 1; // 不开启计数
+//							  Flag.Is_Timer_Up=0; // 定时时间到标志位清零
+								Flag.Is_Stop_Car=1; // 停车	
+                Flag.Run_Step = 20; // 跳转下一步
             }
             break;
             
