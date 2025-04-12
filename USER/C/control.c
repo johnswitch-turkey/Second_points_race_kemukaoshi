@@ -10,7 +10,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
+
 #include "control.h"
+
 #include "main.h"  // 包含HAL库主头文件
 #include "tim.h"   // 定时器相关
 #include "gpio.h"  // GPIO相关

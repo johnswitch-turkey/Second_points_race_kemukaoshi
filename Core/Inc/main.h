@@ -92,9 +92,6 @@ void Error_Handler(void);
 #define KEY2_Pin GPIO_PIN_4
 #define KEY2_GPIO_Port GPIOB
 #define KEY2_EXTI_IRQn EXTI4_IRQn
-#define MPU_INT_Pin GPIO_PIN_5
-#define MPU_INT_GPIO_Port GPIOB
-#define MPU_INT_EXTI_IRQn EXTI9_5_IRQn
 #define EncoderB_1_Pin GPIO_PIN_6
 #define EncoderB_1_GPIO_Port GPIOB
 #define EncoderB_2_Pin GPIO_PIN_7

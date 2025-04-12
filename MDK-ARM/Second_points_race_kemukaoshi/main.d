@@ -39,3 +39,10 @@ second_points_race_kemukaoshi\main.o: ../Core/Inc/usart.h
 second_points_race_kemukaoshi\main.o: ../Core/Inc/gpio.h
 second_points_race_kemukaoshi\main.o: ../USER/H/uart.h
 second_points_race_kemukaoshi\main.o: ../USER/H/control.h
+second_points_race_kemukaoshi\main.o: ../MPU6050/mpu6050.h
+second_points_race_kemukaoshi\main.o: ../MPU6050/mpuiic.h
+second_points_race_kemukaoshi\main.o: ../MPU6050/mpu6050.h
+second_points_race_kemukaoshi\main.o: ../MPU6050/eMPL/inv_mpu.h
+second_points_race_kemukaoshi\main.o: ../MPU6050/eMPL/inv_mpu_dmp_motion_driver.h
+second_points_race_kemukaoshi\main.o: ../USER/H/Print.h
+second_points_race_kemukaoshi\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
