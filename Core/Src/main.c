@@ -115,18 +115,18 @@ int main(void)
 	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
 	HAL_TIM_Encoder_Start(&htim4,TIM_CHANNEL_ALL);
 	
-		while(Flag.Run_Step == 0)//ï¿½È´ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+		while(Flag.Run_Step == 0)//µÈ´ý¿ªÊ¼ÔËÐÐÖ¸Áî
 	{
-		Kinematic_Analysis(0,0,yaw);//Ð¡ï¿½ï¿½Í£Ö¹ 						
-		while(Param.ModeChoose==0){;}//ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â£ï¿½È·ï¿½ï¿½Ä£Ê½
-		Flag.Run_Step=1;//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
-		Flag.Is_Go_straight=1;//ï¿½ï¿½Ö±ï¿½ï¿½			
+		Kinematic_Analysis(0,0,yaw);//Ð¡³µÍ£Ö¹ 						
+		while(Param.ModeChoose==0){;}//µÈ´ý°´¼ü°´ÏÂ£¬È·¶¨Ä£Ê½
+		Flag.Run_Step=1;//¿ªÊ¼ÔËÐÐ
+		Flag.Is_Go_straight=1;//×ßÖ±Ïß			
 	}
 	switch(Param.ModeChoose)
 	{
-		case BACK_PACKING:Usart2_SendString("startcnt1");break;	//ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½	
-		case SIDE_PACKING:Usart2_SendString("startcnt2");break; //ï¿½ï¿½ï¿½ï¿½Ä£Ê½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½à·½Í£ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½	
-		case BACK_SIDE_PACKING:Usart2_SendString("startcnt1");break;//ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½
+		case BACK_PACKING:Usart2_SendString("startcnt1");break;	//¸ù¾ÝÄ£Ê½Ñ¡Ôñ¿ªÆôµ¹³µÈë¿âÊ¶±ðº¯Êý	
+		case SIDE_PACKING:Usart2_SendString("startcnt2");break; //¸ù¾ÝÄ£Ê½Ñ¡Ôñ¿ªÆô²à·½Í£³µÊ¶±ðº¯Êý	
+		case BACK_SIDE_PACKING:Usart2_SendString("startcnt1");break;//¸ù¾ÝÄ£Ê½ÏÈÑ¡Ôñ¿ªÆôµ¹³µÈë¿âÊ¶±ðº¯Êý,ºóÐø¸Ä±ä
 		default:break;		
 	}
   
