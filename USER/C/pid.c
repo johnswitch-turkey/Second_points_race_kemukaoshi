@@ -157,7 +157,7 @@ float VelocityRing_MOTOR1_Control(void)
     float ExpectPWM = 0.0;//当前控制值
 	
 //	  PID.Motor1_Velocity_Actual_Val=((float)Param.UnitTime_Motor1Pluse*1000.0*60.0)/(ENCODER_TOTAL_RESOLUTION*REDUCTION_RATIO*VELOCITY_PID_PERIOD);	
-		PID.Motor1_Velocity_Actual_Val=((float)Param.UnitTime_Motor1Pluse*60000.0)/15600;	
+		PID.Motor1_Velocity_Actual_Val=((float)Param.UnitTime_Motor1Pluse*60000.0)/10400;	
     ExpectPWM=VelocityRing_PID_MOTOR1_Realize(PID.Motor1_Velocity_Actual_Val);
 
 	  return ExpectPWM;

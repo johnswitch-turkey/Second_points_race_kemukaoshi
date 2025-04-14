@@ -26,6 +26,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "uart.h"
+#include "control.h"
+#include "mpu6050.h"
+#include "Print.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,13 +101,42 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
+	MPU_Init();
+	printf("\r\n%d\r\n", mpu_dmp_init());
 	HAL_UART_Receive_IT(&huart2, USART2_RX_BUF, 1);
+	HAL_TIM_Base_Start(&htim1);
+	HAL_TIM_Base_Start(&htim2);
+	HAL_TIM_Base_Start(&htim3);
+	HAL_TIM_Base_Start(&htim4);
+	HAL_TIM_Base_Start(&htim9);
+	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
+	HAL_TIM_Encoder_Start(&htim2,TIM_CHANNEL_ALL);
+	HAL_TIM_Encoder_Start(&htim4,TIM_CHANNEL_ALL);
+	
+		while(Flag.Run_Step == 0)//�ȴ���ʼ����ָ��
+	{
+		Kinematic_Analysis(0,0,yaw);//С��ֹͣ 						
+		while(Param.ModeChoose==0){;}//�ȴ��������£�ȷ��ģʽ
+		Flag.Run_Step=1;//��ʼ����
+		Flag.Is_Go_straight=1;//��ֱ��			
+	}
+	switch(Param.ModeChoose)
+	{
+		case BACK_PACKING:Usart2_SendString("startcnt1");break;	//����ģʽѡ�����������ʶ����	
+		case SIDE_PACKING:Usart2_SendString("startcnt2");break; //����ģʽѡ�����෽ͣ��ʶ����	
+		case BACK_SIDE_PACKING:Usart2_SendString("startcnt1");break;//����ģʽ��ѡ�����������ʶ����,�����ı�
+		default:break;		
+	}
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+		Control_Proc();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

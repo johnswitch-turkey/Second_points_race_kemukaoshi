@@ -1,5 +1,4 @@
 second_points_race_kemukaoshi\control.o: ..\USER\C\control.c
-second_points_race_kemukaoshi\control.o: ../USER/H/control.h
 second_points_race_kemukaoshi\control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 second_points_race_kemukaoshi\control.o: ../Core/Inc/stm32f4xx_hal_conf.h
 second_points_race_kemukaoshi\control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -33,12 +32,18 @@ second_points_race_kemukaoshi\control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm
 second_points_race_kemukaoshi\control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 second_points_race_kemukaoshi\control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 second_points_race_kemukaoshi\control.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
+second_points_race_kemukaoshi\control.o: ../USER/H/control.h
 second_points_race_kemukaoshi\control.o: ../Core/Inc/main.h
 second_points_race_kemukaoshi\control.o: ../Core/Inc/tim.h
 second_points_race_kemukaoshi\control.o: ../Core/Inc/gpio.h
-second_points_race_kemukaoshi\control.o: ../Core/Inc/usart.h
 second_points_race_kemukaoshi\control.o: ../USER/H/encoder.h
 second_points_race_kemukaoshi\control.o: ../USER/H/pid.h
 second_points_race_kemukaoshi\control.o: ../USER/H/motor.h
 second_points_race_kemukaoshi\control.o: ../USER/H/key.h
 second_points_race_kemukaoshi\control.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+second_points_race_kemukaoshi\control.o: ../MPU6050/mpu6050.h
+second_points_race_kemukaoshi\control.o: ../MPU6050/mpuiic.h
+second_points_race_kemukaoshi\control.o: ../MPU6050/mpu6050.h
+second_points_race_kemukaoshi\control.o: ../MPU6050/eMPL/inv_mpu.h
+second_points_race_kemukaoshi\control.o: ../MPU6050/eMPL/inv_mpu_dmp_motion_driver.h
+second_points_race_kemukaoshi\control.o: ../USER/H/uart.h

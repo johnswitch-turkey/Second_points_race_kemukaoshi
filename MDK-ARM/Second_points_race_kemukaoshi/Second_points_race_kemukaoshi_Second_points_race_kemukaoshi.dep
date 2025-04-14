@@ -1,8 +1,8 @@
 Dependencies for Project 'Second_points_race_kemukaoshi', Target 'Second_points_race_kemukaoshi': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
-F (startup_stm32f401xc.s)(0x67F918AC)(--cpu Cortex-M4.fp.sp -g --apcs=interwork -I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 531" --pd "_RTE_ SETA 1" --pd "STM32F401xC SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f401xc.lst --xref -o second_points_race_kemukaoshi\startup_stm32f401xc.o --depend second_points_race_kemukaoshi\startup_stm32f401xc.d)
-F (../Core/Src/main.c)(0x67F918AA)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\main.o --omf_browse second_points_race_kemukaoshi\main.crf --depend second_points_race_kemukaoshi\main.d)
-I (../Core/Inc/main.h)(0x67F9138B)
+F (startup_stm32f401xc.s)(0x67FA0F4F)(--cpu Cortex-M4.fp.sp -g --apcs=interwork -I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 531" --pd "_RTE_ SETA 1" --pd "STM32F401xC SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f401xc.lst --xref -o second_points_race_kemukaoshi\startup_stm32f401xc.o --depend second_points_race_kemukaoshi\startup_stm32f401xc.d)
+F (../Core/Src/main.c)(0x67FA11AD)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\main.o --omf_browse second_points_race_kemukaoshi\main.crf --depend second_points_race_kemukaoshi\main.d)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -40,10 +40,16 @@ I (../Core/Inc/tim.h)(0x67F918A9)
 I (../Core/Inc/usart.h)(0x67F6752E)
 I (../Core/Inc/gpio.h)(0x67F524A1)
 I (../USER/H/uart.h)(0x67F90E22)
-I (../USER/H/control.h)(0x67F53D67)
-F (../Core/Src/gpio.c)(0x67F91676)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\gpio.o --omf_browse second_points_race_kemukaoshi\gpio.crf --depend second_points_race_kemukaoshi\gpio.d)
+I (../USER/H/control.h)(0x67F9FE72)
+I (../MPU6050/mpu6050.h)(0x6795C99F)
+I (../MPU6050/mpuiic.h)(0x630630E6)
+I (../MPU6050/eMPL/inv_mpu.h)(0x630630E6)
+I (../MPU6050/eMPL/inv_mpu_dmp_motion_driver.h)(0x630630E6)
+I (../USER/H/Print.h)(0x67F91B38)
+I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC775FC)
+F (../Core/Src/gpio.c)(0x67FA0F4C)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\gpio.o --omf_browse second_points_race_kemukaoshi\gpio.crf --depend second_points_race_kemukaoshi\gpio.d)
 I (../Core/Inc/gpio.h)(0x67F524A1)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -78,7 +84,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
 F (../Core/Src/i2c.c)(0x67F918A8)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\i2c.o --omf_browse second_points_race_kemukaoshi\i2c.crf --depend second_points_race_kemukaoshi\i2c.d)
 I (../Core/Inc/i2c.h)(0x67F918A8)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -113,7 +119,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
 F (../Core/Src/tim.c)(0x67F918A9)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\tim.o --omf_browse second_points_race_kemukaoshi\tim.crf --depend second_points_race_kemukaoshi\tim.d)
 I (../Core/Inc/tim.h)(0x67F918A9)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -148,7 +154,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
 F (../Core/Src/usart.c)(0x67F90ACE)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\usart.o --omf_browse second_points_race_kemukaoshi\usart.crf --depend second_points_race_kemukaoshi\usart.d)
 I (../Core/Inc/usart.h)(0x67F6752E)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -181,8 +187,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-F (../Core/Src/stm32f4xx_it.c)(0x67F91677)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\stm32f4xx_it.o --omf_browse second_points_race_kemukaoshi\stm32f4xx_it.crf --depend second_points_race_kemukaoshi\stm32f4xx_it.d)
-I (../Core/Inc/main.h)(0x67F9138B)
+F (../Core/Src/stm32f4xx_it.c)(0x67FA0F4D)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\stm32f4xx_it.o --omf_browse second_points_race_kemukaoshi\stm32f4xx_it.crf --depend second_points_race_kemukaoshi\stm32f4xx_it.d)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -215,9 +221,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-I (../Core/Inc/stm32f4xx_it.h)(0x67F91677)
+I (../Core/Inc/stm32f4xx_it.h)(0x67FA0F4D)
 F (../Core/Src/stm32f4xx_hal_msp.c)(0x67F524A1)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\stm32f4xx_hal_msp.o --omf_browse second_points_race_kemukaoshi\stm32f4xx_hal_msp.crf --depend second_points_race_kemukaoshi\stm32f4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -877,7 +883,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-F (..\USER\C\pid.c)(0x67F67052)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\pid.o --omf_browse second_points_race_kemukaoshi\pid.crf --depend second_points_race_kemukaoshi\pid.d)
+F (..\USER\C\pid.c)(0x67FA0B43)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\pid.o --omf_browse second_points_race_kemukaoshi\pid.crf --depend second_points_race_kemukaoshi\pid.d)
 I (../USER/H/pid.h)(0x67F7E9E7)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
@@ -911,7 +917,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-I (../USER/H/control.h)(0x67F53D67)
+I (../USER/H/control.h)(0x67F9FE72)
 F (..\USER\C\motor.c)(0x67F7EA37)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\motor.o --omf_browse second_points_race_kemukaoshi\motor.crf --depend second_points_race_kemukaoshi\motor.d)
 I (../USER/H/motor.h)(0x67F7E8BD)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
@@ -946,8 +952,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-F (..\USER\C\control.c)(0x67F914CC)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\control.o --omf_browse second_points_race_kemukaoshi\control.crf --depend second_points_race_kemukaoshi\control.d)
-I (../USER/H/control.h)(0x67F53D67)
+F (..\USER\C\control.c)(0x67F9FE69)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\control.o --omf_browse second_points_race_kemukaoshi\control.crf --depend second_points_race_kemukaoshi\control.d)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -980,15 +985,20 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../USER/H/control.h)(0x67F9FE72)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Core/Inc/tim.h)(0x67F918A9)
 I (../Core/Inc/gpio.h)(0x67F524A1)
-I (../Core/Inc/usart.h)(0x67F6752E)
 I (../USER/H/encoder.h)(0x67F7E8BE)
 I (../USER/H/pid.h)(0x67F7E9E7)
 I (../USER/H/motor.h)(0x67F7E8BD)
 I (../USER/H/key.h)(0x67F6795E)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5EC77604)
+I (../MPU6050/mpu6050.h)(0x6795C99F)
+I (../MPU6050/mpuiic.h)(0x630630E6)
+I (../MPU6050/eMPL/inv_mpu.h)(0x630630E6)
+I (../MPU6050/eMPL/inv_mpu_dmp_motion_driver.h)(0x630630E6)
+I (../USER/H/uart.h)(0x67F90E22)
 F (..\USER\C\encoder.c)(0x67F7E8BE)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\encoder.o --omf_browse second_points_race_kemukaoshi\encoder.crf --depend second_points_race_kemukaoshi\encoder.d)
 I (../USER/H/encoder.h)(0x67F7E8BE)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
@@ -1057,9 +1067,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-F (..\USER\C\uart.c)(0x67F90E40)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\uart.o --omf_browse second_points_race_kemukaoshi\uart.crf --depend second_points_race_kemukaoshi\uart.d)
+F (..\USER\C\uart.c)(0x67F9E4A5)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\uart.o --omf_browse second_points_race_kemukaoshi\uart.crf --depend second_points_race_kemukaoshi\uart.d)
 I (../USER/H/uart.h)(0x67F90E22)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -1092,11 +1102,11 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
-I (../USER/H/control.h)(0x67F53D67)
+I (../USER/H/control.h)(0x67F9FE72)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC77604)
 F (..\USER\C\Delay.c)(0x67F91977)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\delay.o --omf_browse second_points_race_kemukaoshi\delay.crf --depend second_points_race_kemukaoshi\delay.d)
 I (../USER/H/Delay.h)(0x67F91979)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -1131,7 +1141,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
 F (..\USER\C\Print.c)(0x67F91B33)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\print.o --omf_browse second_points_race_kemukaoshi\print.crf --depend second_points_race_kemukaoshi\print.d)
 I (../USER/H/Print.h)(0x67F91B38)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -1165,13 +1175,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x674C5515)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x674C5515)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC775FC)
-F (..\USER\H\control.h)(0x67F53D67)()
+F (..\USER\H\control.h)(0x67F9FE72)()
 F (..\USER\H\motor.h)(0x67F7E8BD)()
 F (..\USER\H\pid.h)(0x67F7E9E7)()
 F (..\MPU6050\mpu6050.c)(0x630630E6)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\mpu6050.o --omf_browse second_points_race_kemukaoshi\mpu6050.crf --depend second_points_race_kemukaoshi\mpu6050.d)
 I (..\MPU6050\mpu6050.h)(0x6795C99F)
 I (..\MPU6050\mpuiic.h)(0x630630E6)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -1213,7 +1223,7 @@ I (../USER/H/Print.h)(0x67F91B38)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC775FC)
 F (..\MPU6050\mpuiic.c)(0x630630E6)(--c99 -c --cpu Cortex-M4.fp.sp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include -I ../USER/H -I ../USER/C -I ../MPU6050 -I ../MPU6050/eMPL-I.\RTE\_Second_points_race_kemukaoshi-ID:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F401xC -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F401xC-o second_points_race_kemukaoshi\mpuiic.o --omf_browse second_points_race_kemukaoshi\mpuiic.crf --depend second_points_race_kemukaoshi\mpuiic.d)
 I (..\MPU6050\mpuiic.h)(0x630630E6)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -1257,7 +1267,7 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC77604)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5EC77604)
 I (..\MPU6050\eMPL\inv_mpu.h)(0x630630E6)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)
@@ -1301,7 +1311,7 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC775FC)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x5EC77604)
 I (D:\Keil_v5\ARM\ARMCC\include\math.h)(0x5EC77604)
 I (..\MPU6050\eMPL\inv_mpu.h)(0x630630E6)
-I (../Core/Inc/main.h)(0x67F9138B)
+I (../Core/Inc/main.h)(0x67FA0F4D)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x674C5515)
 I (../Core/Inc/stm32f4xx_hal_conf.h)(0x67F918A9)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x674C5515)

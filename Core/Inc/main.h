@@ -67,6 +67,13 @@ void Error_Handler(void);
 #define Beep_GPIO_Port GPIOA
 #define SERVO_Pin GPIO_PIN_6
 #define SERVO_GPIO_Port GPIOA
+#define KEY1_Pin GPIO_PIN_0
+#define KEY1_GPIO_Port GPIOB
+#define KEY1_EXTI_IRQn EXTI0_IRQn
+#define MPU_SCL_Pin GPIO_PIN_1
+#define MPU_SCL_GPIO_Port GPIOB
+#define MPU_SDA_Pin GPIO_PIN_2
+#define MPU_SDA_GPIO_Port GPIOB
 #define Bin2_Pin GPIO_PIN_12
 #define Bin2_GPIO_Port GPIOB
 #define Bin1_Pin GPIO_PIN_13
@@ -79,6 +86,12 @@ void Error_Handler(void);
 #define PWM1_GPIO_Port GPIOA
 #define PWM2_Pin GPIO_PIN_10
 #define PWM2_GPIO_Port GPIOA
+#define KEY3_Pin GPIO_PIN_12
+#define KEY3_GPIO_Port GPIOA
+#define KEY3_EXTI_IRQn EXTI15_10_IRQn
+#define KEY2_Pin GPIO_PIN_4
+#define KEY2_GPIO_Port GPIOB
+#define KEY2_EXTI_IRQn EXTI4_IRQn
 #define EncoderB_1_Pin GPIO_PIN_6
 #define EncoderB_1_GPIO_Port GPIOB
 #define EncoderB_2_Pin GPIO_PIN_7

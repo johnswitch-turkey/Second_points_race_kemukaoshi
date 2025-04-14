@@ -64,7 +64,7 @@ void Usart2_SendByte(uint8_t Data)
   * @brief ·¢ËÍ×Ö·û´®
   * @param str Òª·¢ËÍµÄ×Ö·û´®
   */
-void Usart3_SendString(char *str)
+void Usart2_SendString(char *str)
 {
     HAL_UART_Transmit(&huart2, (uint8_t *)str, strlen(str), HAL_MAX_DELAY);
 }
