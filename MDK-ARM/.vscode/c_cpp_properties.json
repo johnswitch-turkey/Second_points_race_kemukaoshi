@@ -92,7 +92,8 @@
                 "__yield()=",
                 "__vfp_status(x,y)=0"
             ],
-            "intelliSenseMode": "${default}"
+            "intelliSenseMode": "${default}",
+            "compilerPath": "D:/mingw64/bin/gcc.exe"
         }
     ],
     "version": 4
