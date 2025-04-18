@@ -22,9 +22,7 @@
 #include "stm32f4xx_hal.h"
 
 /* 定义 -----------------------------------------------------------------------------------------------------------------*/
-#define BACK_PACKING 			1
-#define SIDE_PACKING 			2
-#define BACK_SIDE_PACKING 3
+
 
 /* 编码器物理分辨率 */
 #define ENCODER_RESOLUTION                     13

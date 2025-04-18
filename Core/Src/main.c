@@ -29,7 +29,7 @@
 #include "control.h"
 #include "mpu6050.h"
 #include "Print.h"
-
+#include "key.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,7 +50,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-extern uint8_t USART2_RX_BUF[USART2_REC_LEN];
+extern uint8_t USART2_RX_BUF[USART2_RX_LEN];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

@@ -36,15 +36,10 @@ float pitch, roll, yaw; // 欧拉角
 #define M_PI 3.14159265358979323846f
 
 int raspi_rxData = 0;    //从树莓派获取的数据
+uint8_t ModeChoose=0;
 
 /* 硬件定义 ------------------------------------------------------------------*/
-// 按键引脚
-#define KEY1_PIN GPIO_PIN_0
-#define KEY1_PORT GPIOA
-#define KEY2_PIN GPIO_PIN_4
-#define KEY2_PORT GPIOA
-#define KEY3_PIN GPIO_PIN_12
-#define KEY3_PORT GPIOB
+
 
 // 执行器控制
 //#define LED_TOGGLE HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin)
@@ -97,6 +92,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         // 定时器计数处理
         Timer_Count_Handler();
     }
+		/*
     // 按键1中断
     else if(GPIO_Pin == KEY1_PIN) {
         HAL_Delay(15);
@@ -121,6 +117,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             Flag.Run_Step = 1;
         }
     }
+		*/
 }
 
 /**
@@ -128,7 +125,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   */
 void Control_Proc(void)
 {
-    switch(Param.ModeChoose)
+		modechoose(&ModeChoose);
+    switch(ModeChoose)
     {
         case BACK_PACKING:
             Back_Parking_Control();
