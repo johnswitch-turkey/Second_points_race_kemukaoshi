@@ -4,6 +4,6 @@
 
 #define INVADE -1
 
-int get_value();
+extern int raspi_rx();
 
 #endif

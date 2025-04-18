@@ -1,3 +1,4 @@
+import re
 import cv2
 import numpy as np
 # import serial
@@ -76,10 +77,15 @@ def detect_line(edges,o):
 def get_mode():
     # if ser.in_waiting:     # 检测串口缓冲区是否有数据
     #     try:
-    #         data = ser.read().decode('utf-8').strip()  
-    #         if data in ('1', '2', '3'):
-    #             print(f"get {data}")
-    #             return int(data)
+    #         rx_buf = ser.read().decode('utf-8').strip()  
+    #         if rx_buf in ('1', '2', '3'):
+    #             data=int(rx_buf)
+    #             rx_buf=0
+    #             return data
+    #        elif rx_buf in ("1finish","2finish"):
+    #            data=int(rx_buf[0])
+    #            rx_buf=0
+    #            return data
     #     except Exception as e:
     #         print(f"ERROR: {e}")
     # return None  
@@ -108,8 +114,8 @@ def reversing_task(mode,edges,orgb):
         if not globals.reversing:
         # 每检测到有效竖线后就等待一段时间
             if globals.diff_time>=config.DETECTION_TIME_INTERVAL:
-                flag, orgb = detect_line(edges, orgb)
-                if flag:
+                detect_flag, orgb = detect_line(edges, orgb)
+                if detect_flag:
                     globals.detect += 1
                     globals.start_time=time.time()
                    
@@ -121,11 +127,15 @@ def reversing_task(mode,edges,orgb):
                     elif mode==2:
                         pass
                         # ser.write(f{mode}.encode())
+                    # 进入倒车状态，检测到的竖线数量清零
                     globals.start_time=0
+                    globals.detect=0
+                    globals.reversing=True
 
-        # 如果在执行倒车任务，而时间间隔大于设定值，就表示倒车完毕,退出倒车任务
+        # 如果在执行倒车任务，而收到倒车完毕信号且时间间隔大于设定值，就表示倒车完毕,退出倒车任务
         else:
-            if globals.diff_time>=config.REVERSING_TIMEOUT:
+            finish_flag = get_mode()
+            if globals.diff_time>=config.REVERSING_TIMEOUT and finish_flag in (1,2):
                 return
 
 
@@ -138,8 +148,8 @@ def reversing_task(mode,edges,orgb):
         # 进行倒车检测
         if not globals.reversing:
             if globals.diff_time>=config.DETECTION_TIME_INTERVAL:
-                flag, orgb = detect_line(edges, orgb)
-                if flag:
+                detect_flag, orgb = detect_line(edges, orgb)
+                if detect_flag:
                     globals.detect += 1
                     globals.start_time=time.time()
                     # print(f"[DEBUG] 当前检测竖线总数：{detect}")
@@ -156,16 +166,17 @@ def reversing_task(mode,edges,orgb):
 
             # 第二次倒车入库
             if globals.detect>=config.DETECTION_TIME_INTERVAL and globals.reverse_count==1:
-                print('[INFO]second mission')
+                # print('[INFO]second mission')
                 message='2'
                 # ser.write(message.encode())
                 globals.reverse_count+=1
                 globals.detect=0
                 globals.reversing=True
 
-        # 如果在执行倒车任务，而时间间隔大于设定值，就表示出库完毕,继续发车 
+        # 如果在执行倒车任务，而时间间隔大于设定值且收到任务1完成的信号，就表示出库完毕,继续发车 
         else:
-            if globals.diff_time>=(config.REVERSING_TIMEOUT+config.LEAVE_GARAGE_TIMEOUT):
+            finish_flag = get_mode() 
+            if globals.diff_time>=(config.REVERSING_TIMEOUT+config.LEAVE_GARAGE_TIMEOUT) and finish_flag ==1:
                 globals.reversing=False
                 # print('[INFO]go on!')
 
