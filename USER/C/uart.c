@@ -16,9 +16,12 @@
 extern UART_HandleTypeDef huart2;  // 声明外部定义的 huart2
 
 /* 全局变量 ------------------------------------------------------------------*/
-uint8_t USART2_RX_BUF[USART2_REC_LEN] = {0}; // 接收缓冲区
-uint16_t USART2_RX_STA = 0;                  // 接收状态标记
-volatile uint8_t USART2_REC_CNT_LEN = 0;     // 接收数据计数
+uint8_t USART2_RX_BUF[USART2_RX_LEN] = {0}; // 接收缓冲区
+uint8_t USART2_RX_STA = 0;                  // 接收状态标记
+uint8_t USART2_newData;
+uint8_t start_receive=0;
+//volatile uint8_t USART2_REC_CNT_LEN = 0;     // 接收数据计数
+
 
 /* CubeMX配置说明 ------------------------------------------------------------*/
 /**
@@ -76,38 +79,43 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     if(huart->Instance == USART2)
     {
-        // 数据存入缓冲区
-        USART2_REC_CNT_LEN++;
+				start_receive=1;
+        USART2_RX_BUF[USART2_RX_STA&0x7FFF]=USART2_newData;
+				USART2_RX_STA++;
         
         // 检查缓冲区溢出
-        if(USART2_REC_CNT_LEN >= USART2_REC_LEN)
+        if(USART2_RX_STA >= USART2_RX_LEN)
         {
-            USART2_REC_CNT_LEN = 0;
+            USART2_RX_STA = 0;
         }
         
         // 重新启动接收中断
-        HAL_UART_Receive_IT(&huart2, &USART2_RX_BUF[USART2_REC_CNT_LEN], 1);
+        HAL_UART_Receive_IT(&huart2, &USART2_newData, 1);
     }
 }
 
 /**
   * @brief OpenMV数据处理
   */
-void openMv_Proc(void)
+/*
+void openmv_proc(void)
 {
-    if(strstr((const char*)USART2_RX_BUF, "end") != NULL)
+    if(strstr((const char*)usart2_rx_buf, "end") != null)
     {
-        if(strcmp((const char*)USART2_RX_BUF, "stopend") == 0)
+        if(strcmp((const char*)usart2_rx_buf, "stopend") == 0)
         {
-            Param.openMV_Data = 1;
+            param.openmv_data = 1;
         }
         
-        USART2_REC_CNT_LEN = 0;
-        memset(USART2_RX_BUF, 0, USART2_REC_LEN);
+        usart2_rec_cnt_len = 0;
+        memset(usart2_rx_buf, 0, usart2_rec_len);
         
         // 重新开始接收
-        HAL_UART_Receive_IT(&huart2, &USART2_RX_BUF[0], 1);
+        hal_uart_receive_it(&huart2, &usart2_rx_buf[0], 1);
     }
 }
+*/
+
+
 
 /*************************************END OF FILE************************************/

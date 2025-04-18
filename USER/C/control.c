@@ -23,6 +23,7 @@
 #include "math.h"
 #include "mpu6050.h"
 #include "uart.h"
+#include "decode.h"
 
 /* 全局变量 ------------------------------------------------------------------*/
 Param_InitTypedef Param;
@@ -33,6 +34,8 @@ float pitch, roll, yaw; // 欧拉角
 #define L 0.1545f      // 轮距参数
 //#define SERVO_INIT 1500 // 舵机中位值
 #define M_PI 3.14159265358979323846f
+
+int raspi_rxData = 0;    //从树莓派获取的数据
 
 /* 硬件定义 ------------------------------------------------------------------*/
 // 按键引脚
@@ -156,8 +159,9 @@ static void Back_Parking_Control(void)
         case 1: // 直行检测
             if(Flag.Is_Go_straight) {
                 Kinematic_Analysis(60, 60, yaw);
-                openMv_Proc();
-                if(Param.openMV_Data == 1) {
+                //openMv_Proc();
+								raspi_rxData=raspi_rx();
+                if(raspi_rxData == 1) {
                     Flag.Is_Go_straight = 0;
                     Flag.Is_Stop_Car = 1;
                     Flag.Run_Step = 2;
@@ -268,6 +272,7 @@ static void Back_Parking_Control(void)
         case 9: // 最终停车
             if(Flag.Is_Stop_Car && !Flag.Start_Count) {
                 Kinematic_Analysis(0, 0, 0.0);
+							Usart2_SendString("1finish");
             }
             break;
             
@@ -288,7 +293,8 @@ static void Side_Parking_Control(void)
             if(Flag.Is_Go_straight) {
                 Kinematic_Analysis(100, 100, yaw);
 //                openMv_Proc();
-                if(Param.openMV_Data == 1) {
+									raspi_rxData=raspi_rx();
+                if(raspi_rxData == 1) {
                     Flag.Is_Go_straight = 0;
                     Flag.Is_Stop_Car = 1;
                     Flag.Run_Step = 2;
@@ -433,7 +439,8 @@ static void Side_Parking_Control(void)
         case 12: // 最终停车
             if(Flag.Is_Stop_Car && !Flag.Start_Count) {
                 Kinematic_Analysis(0, 0, 0.0);
-            }
+								Usart2_SendString("2finish");     
+						}
             break;
             
         default:
@@ -453,7 +460,8 @@ static void Back_Side_Parking_Control(void)
             if(Flag.Is_Go_straight) {
                 Kinematic_Analysis(100, 100, yaw);
 //                openMv_Proc();
-                if(Param.openMV_Data == 1) {
+								raspi_rxData=raspi_rx();
+                if(raspi_rxData == 1) {
                     Flag.Is_Go_straight = 0;
                     Flag.Is_Stop_Car = 1;
                     Flag.Run_Step = 2;
@@ -555,8 +563,9 @@ static void Back_Side_Parking_Control(void)
             if(abs((int)yaw) <= 5) {
                 Flag.Is_Turn_Car = 0;
                 Flag.Is_Go_straight = 1;
-                Param.openMV_Data = 0;
-                Usart2_SendString("startcnt1");
+                //Param.openMV_Data = 0;
+							//发出执行测方倒车检测的信号
+                Usart2_SendString("1finish");
                 Flag.Run_Step = 9;
             }
             break;
@@ -565,7 +574,8 @@ static void Back_Side_Parking_Control(void)
             if(Flag.Is_Go_straight) {
                 Kinematic_Analysis(100, 100, yaw);
 //                openMv_Proc();
-                if(Param.openMV_Data == 1) {
+									raspi_rxData=raspi_rx();
+                if(raspi_rxData == 2) {
                     Flag.Is_Go_straight = 0;
                     Flag.Is_Stop_Car = 1;
                     Flag.Run_Step = 10;
@@ -720,6 +730,7 @@ static void Back_Side_Parking_Control(void)
         case 20: // 最终停车
             if(Flag.Is_Stop_Car && !Flag.Start_Count) {
                 Kinematic_Analysis(0, 0, 0.0);
+							Usart2_SendString("2finish");
             }
             break;
             

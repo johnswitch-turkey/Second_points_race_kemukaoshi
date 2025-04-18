@@ -41,7 +41,8 @@ typedef struct{
 	float 		Servo_Target_Val;//舵机目标值
 	int   		Motor1_PWM_Out;//电机1PWM输出
 	int  			Motor2_PWM_Out;//电机2PWM输出	
-	uint8_t 	openMV_Data;//openMV数据	
+	//uint8_t 	openMV_Data;//openMV数据	
+	int raspi_rxData;    //树莓派数据
 	uint16_t 	Timer_threshold_value;//定时阈值
 	uint8_t 	ModeChoose;//模式选择
 	
