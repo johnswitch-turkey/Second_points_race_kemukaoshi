@@ -21,4 +21,4 @@ void Delay_min(int time)
 {
     while (time--)
         Delay_s(60);
-}
+}   
