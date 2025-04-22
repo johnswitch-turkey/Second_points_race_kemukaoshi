@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.31.0.0
 Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: wang daanshuomingshuoyou@outlook.com, fgdf, LIC=VGXG8-3A9A3-EVX1R-K98EL-76GJS-HGQYN
+License Information: 1 zhang, 1, LIC=HN0AE-5UJLU-KPQZY-I8AN5-ML32D-TXCKN
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
@@ -21,33 +21,20 @@ Target DLL:      CMSIS_AGDI.dll V1.32.6.0
 Dialog DLL:      TCM.DLL V1.46.0.0
  
 <h2>Project:</h2>
-D:\VScode\Projects\python\2ndrace\Second_points_race_kemukaoshi\MDK-ARM\Second_points_race_kemukaoshi.uvprojx
-Project File Date:  04/18/2025
+d:\STM32_Projects\Second_points_race_kemukaoshi\MDK-ARM\Second_points_race_kemukaoshi.uvprojx
+Project File Date:  04/22/2025
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.14', folder: 'D:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Second_points_race_kemukaoshi'
-../USER/C/key.c(9): error: conflicting types for 'key_state'
-void key_state(KEY_STATE *key,GPIO_TypeDef *port,uint16_t pin,int *keyflag)
-     ^
-../USER/H\key.h(42): note: previous declaration is here
-void key_state();
-     ^
-1 error generated.
 compiling key.c...
-compiling decode.c...
-compiling uart.c...
-../USER/C/pid.c(103): warning: multiple unsequenced modifications to 'Integral_Error' [-Wunsequenced]
-        Integral_Error=(Integral_Error>690)?Integral_Error=690:((Integral_Error<-690)?Integral_Error=-690:Integral_Error);
-                      ~                                                                             ^
-../USER/C/pid.c(137): warning: multiple unsequenced modifications to 'Integral_Error' [-Wunsequenced]
-        Integral_Error=(Integral_Error>690)?Integral_Error=690:((Integral_Error<-690)?Integral_Error=-690:Integral_Error);
-                      ~                                                                             ^
-2 warnings generated.
-compiling pid.c...
+compiling Print.c...
 compiling main.c...
 compiling control.c...
-"Second_points_race_kemukaoshi\Second_points_race_kemukaoshi.axf" - 1 Error(s), 2 Warning(s).
+linking...
+Program Size: Code=34334 RO-data=4086 RW-data=80 ZI-data=2616  
+FromELF: creating hex file...
+"Second_points_race_kemukaoshi\Second_points_race_kemukaoshi.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -58,21 +45,20 @@ Package Vendor: ARM
    * Component: CORE Version: 5.4.0
 
 Package Vendor: Keil
-                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.16.0.pack
-                Keil.STM32F4xx_DFP.2.16.0
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.15.0.pack
+                Keil.STM32F4xx_DFP.2.15.0
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Second_points_race_kemukaoshi
-  D:\Keil_v5\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
-  D:\Keil_v5\Packs\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  D:\Keil_v5\ARM\PACK\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  D:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.4.0
       Include file:  CMSIS\Core\Include\tz_context.h
-Target not created.
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

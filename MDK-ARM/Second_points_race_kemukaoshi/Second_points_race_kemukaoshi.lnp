@@ -34,6 +34,7 @@
 "second_points_race_kemukaoshi\uart.o"
 "second_points_race_kemukaoshi\delay.o"
 "second_points_race_kemukaoshi\print.o"
+"second_points_race_kemukaoshi\decode.o"
 "second_points_race_kemukaoshi\mpu6050.o"
 "second_points_race_kemukaoshi\mpuiic.o"
 "second_points_race_kemukaoshi\inv_mpu.o"

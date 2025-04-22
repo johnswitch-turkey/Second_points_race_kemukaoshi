@@ -36,4 +36,5 @@ second_points_race_kemukaoshi/main.o: ..\Core\Src\main.c \
   ..\USER\H\control.h ..\USER\H\control.h ..\MPU6050\mpu6050.h \
   ..\MPU6050\mpuiic.h ..\MPU6050\mpu6050.h ..\MPU6050\eMPL\inv_mpu.h \
   ..\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h ..\USER\H\Print.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\USER\H\key.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\USER\H\motor.h \
+  ..\USER\H\key.h

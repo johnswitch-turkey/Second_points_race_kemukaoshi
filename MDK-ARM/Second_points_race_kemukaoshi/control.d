@@ -31,10 +31,9 @@ second_points_race_kemukaoshi/control.o: ..\USER\C\control.c \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\USER\H\control.h ..\Core\Inc\main.h ..\Core\Inc\tim.h \
-  ..\Core\Inc\main.h ..\Core\Inc\gpio.h ..\USER\H\encoder.h \
-  ..\USER\H\pid.h ..\USER\H\motor.h ..\USER\H\key.h \
+  ..\USER\H\control.h ..\USER\H\encoder.h ..\USER\H\pid.h \
+  ..\USER\H\motor.h ..\USER\H\key.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h ..\MPU6050\mpu6050.h \
-  ..\MPU6050\mpuiic.h ..\MPU6050\mpu6050.h ..\MPU6050\eMPL\inv_mpu.h \
-  ..\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h ..\USER\H\uart.h \
-  ..\USER\H\control.h ..\USER\H\decode.h
+  ..\MPU6050\mpuiic.h ..\Core\Inc\main.h ..\MPU6050\mpu6050.h \
+  ..\MPU6050\eMPL\inv_mpu.h ..\MPU6050\eMPL\inv_mpu_dmp_motion_driver.h \
+  ..\USER\H\uart.h ..\USER\H\control.h ..\USER\H\decode.h
