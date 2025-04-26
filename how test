@@ -1,0 +1,273 @@
+[33mcommit 59253236026d0574cab0d131e5f158f7a21f7375[m[33m ([m[1;36mHEAD -> [m[1;32mtest[m[33m, [m[1;31morigin/test[m[33m)[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Sat Apr 26 12:49:04 2025 +0800
+
+    成功使能mpu6050，但是又进不了PB5外部中断了
+
+[33mcommit 6493eaeb8ee014a3981c8748b226b5a25cbe0937[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Wed Apr 23 22:39:39 2025 +0800
+
+    修改mpu6050代码使其可以产生拉低引脚中断
+
+[33mcommit bdd0b557d98bcb2e76c594d7565d62661746a986[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Tue Apr 22 15:48:21 2025 +0800
+
+    只有一个轮子能转
+
+[33mcommit de7f07bf0c01dc47d9f7d76da95f004e62343edb[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Tue Apr 22 14:44:48 2025 +0800
+
+    修改了代码让串口完善
+
+[33mcommit 5651463a40dcd610d51e80a05b74d828663bfc2d[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 21 23:14:33 2025 +0800
+
+    合并前的提交
+
+[33mcommit abd8cb5e3ebbdf6dde109f4a33db3cb43113519f[m
+Author: wtr <2812542042@qq.com>
+Date:   Fri Apr 18 13:14:48 2025 +0800
+
+    利用状态机完成按键消抖
+
+[33mcommit 29c9b9f9e64f8c75c781072ca5ec993bc6bafa90[m
+Merge: c61deac 2938c93
+Author: wtr <2812542042@qq.com>
+Date:   Fri Apr 18 12:21:39 2025 +0800
+
+    Merge branch 'main' of github.com:blow-prelude/Second_points_race_kemukaoshi
+
+[33mcommit c61deac4e4ec6caa4fca1321636f44c1e4738bd6[m
+Author: wtr <2812542042@qq.com>
+Date:   Fri Apr 18 12:13:44 2025 +0800
+
+    修改了uart.c,decode.c,control.c及其对应的头文件使之能与树莓派通信，修改了opencv的串口通信的部分逻辑
+
+[33mcommit ab7432448ce6a1297dff6eda49778eff40fcdbd2[m
+Author: wtr <2812542042@qq.com>
+Date:   Thu Apr 17 19:44:26 2025 +0800
+
+    encapsulate some functions to make main more simpleand readable
+
+[33mcommit 2938c934445ef585dd4b3d488c9897b81fdd8b41[m
+Author: wtr <2812542042@qq.com>
+Date:   Fri Apr 18 12:13:44 2025 +0800
+
+    修改了uart.c,decode.c,control.c及其对应的头文件使之能与树莓派通信，修改了opencv的串口通信的部分逻辑
+
+[33mcommit db1c2b9a9c7d02c291f7558dc9e6c29660345c06[m
+Author: wtr <2812542042@qq.com>
+Date:   Thu Apr 17 19:44:26 2025 +0800
+
+    encapsulate some functions to make main more simpleand readable
+
+[33mcommit 4fed13790ac796cd73b8f91699f9b1eb1e4fbd47[m
+Merge: a78fd42 4e5841a
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Wed Apr 16 22:04:44 2025 +0800
+
+    Merge pull request #7 from jorniopm/main
+    
+    更新排线
+
+[33mcommit 4e5841ae40aadc1542f9890b17de3521415c894a[m
+Merge: 56cf62c a78fd42
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Wed Apr 16 21:57:19 2025 +0800
+
+    Merge branch 'main' of https://github.com/jorniopm/Second_points_race_kemukaoshi
+
+[33mcommit 56cf62ce5a271caacf0b1639f54da5818e0eb69a[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Wed Apr 16 21:57:15 2025 +0800
+
+    修改排线
+
+[33mcommit a78fd4288d3d1ed2fb9a6814ea9f30f67b52e055[m
+Merge: 50de54b cafb27a
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Wed Apr 16 21:28:16 2025 +0800
+
+    Merge pull request #6 from jorniopm/main
+    
+    update latest pcb board
+
+[33mcommit cafb27ae0993402e30f528a7ce89366b41904c37[m
+Merge: 88bb0c0 50de54b
+Author: jorniopm <2984458902@qq.com>
+Date:   Wed Apr 16 19:03:21 2025 +0800
+
+    Merge branch 'johnswitch-turkey:main' into main
+
+[33mcommit 88bb0c0ad1a0c3ec6df3aa33ca712fb814704797[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Wed Apr 16 19:02:31 2025 +0800
+
+    pcb绘制完成
+
+[33mcommit 4851ca6edf101716944a2cb6c348cb38bd77c35b[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Tue Apr 15 17:45:37 2025 +0800
+
+    update pcb
+
+[33mcommit 50de54bd8305f91f658fbf4147da9ad32b36f8e0[m
+Merge: d050bbf 7a03ce6
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Tue Apr 15 14:42:11 2025 +0800
+
+    Merge pull request #5 from blow-prelude/main
+    
+    add function of decoding the data
+
+[33mcommit 7a03ce60293058b34eb27cd27d055fbc7b88f9e0[m
+Author: wtr <2812542042@qq.com>
+Date:   Tue Apr 15 11:03:47 2025 +0800
+
+    add function of decoding the data
+
+[33mcommit d050bbf31ddf574cdff4765815a8997b445ca219[m
+Merge: 23f1e26 d3c25d7
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 14 22:57:35 2025 +0800
+
+    Merge pull request #4 from jorniopm/main
+    
+    删除多余文件
+
+[33mcommit d3c25d7c3e8ee8989be1a78d2980ad42526ad3de[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Mon Apr 14 22:48:08 2025 +0800
+
+    删除多余文件
+
+[33mcommit a1505b64ccfd04cff7e5a3ff3a7bceedda1c4364[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Mon Apr 14 22:20:14 2025 +0800
+
+    更新日志，添加2025年4月14日22:18:41的记录
+
+[33mcommit 4bbcc6b2c0d54dbbfc27e2623827684a087071c6[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Mon Apr 14 22:19:09 2025 +0800
+
+    更改配置文件
+
+[33mcommit 23f1e260635518427ab2839a7f872d47176350b4[m
+Merge: ac50e95 d463617
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 14 22:17:36 2025 +0800
+
+    Merge pull request #3 from blow-prelude/main
+    
+    opencv
+
+[33mcommit d46361747410d76a88025edb72ae2c2b10593ab0[m
+Author: wtr <2812542042@qq.com>
+Date:   Mon Apr 14 22:06:31 2025 +0800
+
+    update
+
+[33mcommit ac50e957605ca34045cfc3ae1b3438c0e1593367[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 14 22:04:45 2025 +0800
+
+    Create README.md
+
+[33mcommit 49d2a1f4ee3aafe1846f724cafd9b443d6eb52c9[m
+Merge: 51879d6 e6935a9
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 14 21:58:58 2025 +0800
+
+    改mpu6050，加按键
+
+[33mcommit 51879d6cc99a05a5e35a624b0cf68b328131042b[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 14 21:29:30 2025 +0800
+
+    pull
+
+[33mcommit e6935a9f56cb3b72ca6cbca43288dac5479ba2f6[m
+Merge: f39f709 e022496
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Mon Apr 14 21:17:14 2025 +0800
+
+    Merge pull request #2 from jorniopm/main
+    
+    更新f401拓展板
+
+[33mcommit e022496db83ce335127ec21966ee9cd1c184a6d2[m
+Merge: 17ff1bc f39f709
+Author: jorniopm <2984458902@qq.com>
+Date:   Mon Apr 14 21:13:49 2025 +0800
+
+    Merge branch 'johnswitch-turkey:main' into main
+
+[33mcommit 17ff1bcdb8f4892d08832c085e80fbb401776c9b[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Mon Apr 14 21:09:33 2025 +0800
+
+    Implement code changes to enhance functionality and improve performance
+
+[33mcommit f39f709a48b6f3e25ebbfee2d46582b2da74a0da[m
+Merge: ff6154c 21bbe3f
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Sat Apr 12 15:11:50 2025 +0800
+
+    Merge branch 'main' of github.com:johnswitch-turkey/Second_points_race_kemukaoshi
+    Pull latest changes from upstream
+
+[33mcommit ff6154c733bcd23349d35b14b54d870e8cefec31[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Sat Apr 12 15:11:35 2025 +0800
+
+    完善main代码，修改motor参数
+
+[33mcommit 36c0f5f0fccba180d5f578275e888f05666a9a6e[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Sat Apr 12 14:16:06 2025 +0800
+
+    新增日志条目，记录2025年4月12日的日志信息
+
+[33mcommit 21bbe3f68e5797bcdbd4ab515808f9d4955de20d[m
+Merge: 96191d6 c8bab97
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Sat Apr 12 13:35:39 2025 +0800
+
+    Merge pull request #1 from jorniopm/main
+    
+    新增pcb文件夹
+
+[33mcommit 96191d6ca810043455b704d1ca86a64f0cd34297[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Sat Apr 12 13:33:48 2025 +0800
+
+    add 注释
+
+[33mcommit c8bab97e52973943804492ea29889f3e6887fd6b[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Fri Apr 11 21:59:53 2025 +0800
+
+    新增pcb库
+
+[33mcommit 227dd794482e1d2ceb01063f9b57eb85c2c3e6e1[m
+Author: wangjiacheng <2984458902@qq.com>
+Date:   Fri Apr 11 21:48:13 2025 +0800
+
+    初始化
+
+[33mcommit f1c00443f9ab7fdf299dca352700d7684918ce7f[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Fri Apr 11 21:40:37 2025 +0800
+
+    add mpu6050
+
+[33mcommit ab21bd01098694c6fe845a8ca06530127a5dec9d[m
+Author: johnswitch-turkey <2309292099@qq.com>
+Date:   Fri Apr 11 20:53:37 2025 +0800
+
+    origin code
